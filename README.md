@@ -49,11 +49,11 @@ This generates a ready-to-build project at `./<name>-mcp/`.
 
 ## Template variables
 
-| Placeholder  | Example input `github` |
-| ------------ | ---------------------- |
-| `{{name}}`   | `github`               |
-| `{{Name}}`   | `Github`               |
-| `{{NAME}}`   | `GITHUB`               |
+| Placeholder | Example input `github` |
+| ----------- | ---------------------- |
+| `{{name}}`  | `github`               |
+| `{{Name}}`  | `Github`               |
+| `{{NAME}}`  | `GITHUB`               |
 
 ## After scaffolding
 
