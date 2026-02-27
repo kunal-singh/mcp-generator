@@ -12,14 +12,7 @@ npx github:kunal-singh/mcp-generator
 
 # with name
 npx github:kunal-singh/mcp-generator github
-pnpm dlx github:kunal-singh/mcp-generator github
-```
-
-**From npm registry (once published):**
-
-```bash
-pnpm create mcp github
-npx create-mcp github
+pnpx github:kunal-singh/mcp-generator github
 ```
 
 This generates a ready-to-build project at `./<name>-mcp/`.
