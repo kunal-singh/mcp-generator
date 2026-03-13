@@ -1,8 +1,8 @@
 import type {
   ResourceHandler,
   ResourceContent,
-} from '../../../types/resource.types';
-import type { I{{Name}}Client } from '../../api/client.interface';
+} from "../../../types/resource.types";
+import type { I{{Name}}Client } from "../../api/client.interface";
 
 /**
  * Example resource handler
@@ -19,7 +19,7 @@ export const exampleHandler: ResourceHandler<I{{Name}}Client> = async (
 
   return {
     uri,
-    mimeType: 'application/json',
+    mimeType: "application/json",
     text: JSON.stringify(result, null, 2),
   };
 };

@@ -1,1 +1,1 @@
-export { examplePrompt } from './example.prompts.js';
+export { examplePrompt } from "./example.prompts.js";

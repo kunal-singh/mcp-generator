@@ -1,5 +1,5 @@
-import { HttpClientBase } from './http-client.base';
-import type { I{{Name}}Client } from './client.interface';
+import { HttpClientBase } from "./http-client.base";
+import type { I{{Name}}Client } from "./client.interface";
 
 /**
  * {{Name}} API client
@@ -10,13 +10,13 @@ import type { I{{Name}}Client } from './client.interface';
  */
 export class {{Name}}Client extends HttpClientBase implements I{{Name}}Client {
   constructor(token: string) {
-    super('https://api.example.com/v1', token);
+    super("https://api.example.com/v1", token);
   }
 
   // TODO: Replace with your actual API methods
   // Example implementation:
   async getData(id?: string): Promise<unknown> {
-    const endpoint = id ? `/data/${id}` : '/data';
+    const endpoint = id ? `/data/${id}` : "/data";
     return this.request(endpoint);
   }
 }

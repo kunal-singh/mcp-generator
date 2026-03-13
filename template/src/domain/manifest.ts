@@ -1,24 +1,24 @@
-import type { ServerManifest } from '../types/manifest.types';
-import { ToolRegistry } from '../registry/tools';
-import { ResourceRegistry } from '../registry/resources';
-import { PromptRegistry } from '../registry/prompts';
-import type { I{{Name}}Client } from './api/client.interface';
-import { Cached{{Name}}Client } from './api/cached-client';
-import { logger } from '../lib/logger';
+import type { ServerManifest } from "../types/manifest.types";
+import { ToolRegistry } from "../registry/tools";
+import { ResourceRegistry } from "../registry/resources";
+import { PromptRegistry } from "../registry/prompts";
+import type { I{{Name}}Client } from "./api/client.interface";
+import { Cached{{Name}}Client } from "./api/cached-client";
+import { logger } from "../lib/logger";
 
 // Tool definitions
-import { getExampleTool } from './tools/definitions';
+import { getExampleTool } from "./tools/definitions";
 
 // Tool handlers
-import { getExampleHandler } from './tools/handlers';
+import { getExampleHandler } from "./tools/handlers";
 
 // Resource definitions and handlers
-import { exampleResource } from './resources/definitions';
-import { exampleHandler } from './resources/handlers';
+import { exampleResource } from "./resources/definitions";
+import { exampleHandler } from "./resources/handlers";
 
 // Prompt definitions and handlers
-import { examplePrompt } from './prompts/definitions';
-import { examplePromptHandler } from './prompts/handlers';
+import { examplePrompt } from "./prompts/definitions";
+import { examplePromptHandler } from "./prompts/handlers";
 
 /**
  * Build the complete {{Name}} MCP server manifest
@@ -72,7 +72,7 @@ export async function primeCache(client: I{{Name}}Client): Promise<void> {
   const endpoints = [
     // TODO: Add your cacheable endpoints here
     // Example:
-    { name: 'example', fn: () => client.getData() },
+    { name: "example", fn: () => client.getData() },
   ];
 
   await Promise.allSettled(

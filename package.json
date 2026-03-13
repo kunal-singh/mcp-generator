@@ -46,14 +46,6 @@
     "tsup": "^8.5.1",
     "typescript": "^5.7.0"
   },
-  "lint-staged": {
-    "**/*.{ts,js,json,md,yml,yaml}": [
-      "prettier --write"
-    ],
-    "**/*.ts": [
-      "eslint --cache --fix"
-    ]
-  },
   "engines": {
     "node": ">=22.0.0"
   }

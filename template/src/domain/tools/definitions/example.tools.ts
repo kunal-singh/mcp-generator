@@ -1,4 +1,4 @@
-import type { ToolDefinition } from '../../../types/tool.types';
+import type { ToolDefinition } from "../../../types/tool.types";
 
 /**
  * Example tool definition
@@ -8,14 +8,14 @@ import type { ToolDefinition } from '../../../types/tool.types';
  * The name must be unique across all registered tools.
  */
 export const getExampleTool: ToolDefinition = {
-  name: 'get_example',
-  description: 'Retrieve example data from the {{Name}} API',
+  name: "get_example",
+  description: "Retrieve example data from the {{Name}} API",
   inputSchema: {
-    type: 'object',
+    type: "object",
     properties: {
       id: {
-        type: 'string',
-        description: 'The ID of the item to retrieve (optional)',
+        type: "string",
+        description: "The ID of the item to retrieve (optional)",
       },
     },
   },

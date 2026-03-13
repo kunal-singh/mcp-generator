@@ -1,6 +1,6 @@
-import type { ToolHandler } from '../../../types/tool.types';
-import type { I{{Name}}Client } from '../../api/client.interface';
-import { formatToolResponse } from '../../../lib/response-formatter';
+import type { ToolHandler } from "../../../types/tool.types";
+import type { I{{Name}}Client } from "../../api/client.interface";
+import { formatToolResponse } from "../../../lib/response-formatter";
 
 /**
  * Example tool handler
