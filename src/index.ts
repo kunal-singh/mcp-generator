@@ -1,8 +1,8 @@
-import { createInterface } from 'node:readline';
-import path from 'node:path';
-import fs from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { scaffold, toPascalCase, toKebabCase } from './scaffold.js';
+import { createInterface } from "node:readline";
+import path from "node:path";
+import fs from "node:fs";
+import { fileURLToPath } from "node:url";
+import { scaffold, toPascalCase, toKebabCase } from "./scaffold.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -20,16 +20,16 @@ function prompt(question: string): Promise<string> {
 }
 
 async function main() {
-  console.log('\ncreate-mcp — scaffold a new MCP server\n');
+  console.log("\ncreate-mcp — scaffold a new MCP server\n");
 
   // Accept project name from CLI arg or prompt interactively
   let projectName = process.argv[2];
   if (!projectName) {
-    projectName = await prompt('Project name (e.g. github): ');
+    projectName = await prompt("Project name (e.g. github): ");
   }
 
   if (!projectName) {
-    console.error('Error: project name is required.');
+    console.error("Error: project name is required.");
     process.exit(1);
   }
 
@@ -43,7 +43,7 @@ async function main() {
   }
 
   // The template directory ships alongside this package
-  const templateDir = path.resolve(__dirname, '../template');
+  const templateDir = path.resolve(__dirname, "../template");
 
   if (!fs.existsSync(templateDir)) {
     console.error(
@@ -91,6 +91,6 @@ Template variables used:
 }
 
 main().catch((err: unknown) => {
-  console.error('Fatal error:', err);
+  console.error("Fatal error:", err);
   process.exit(1);
 });
