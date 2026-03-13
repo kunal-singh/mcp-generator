@@ -1,8 +1,8 @@
 import type {
   PromptHandler,
   PromptResponse,
-} from '../../../types/prompt.types';
-import type { I{{Name}}Client } from '../../api/client.interface';
+} from "../../../types/prompt.types";
+import type { I{{Name}}Client } from "../../api/client.interface";
 
 /**
  * Example prompt handler
@@ -23,9 +23,9 @@ export const examplePromptHandler: PromptHandler<I{{Name}}Client> = async (
   return {
     messages: [
       {
-        role: 'user',
+        role: "user",
         content: {
-          type: 'text',
+          type: "text",
           text: `Process the following input from {{Name}}: "${input}"`,
         },
       },

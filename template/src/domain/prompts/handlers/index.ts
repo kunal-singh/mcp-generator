@@ -1,1 +1,1 @@
-export { examplePromptHandler } from './example.handler.js';
+export { examplePromptHandler } from "./example.handler.js";

@@ -1,13 +1,13 @@
-import type { I{{Name}}Client } from './client.interface';
-import { TTLCache } from '../../lib/ttl-cache';
-import { logger } from '../../lib/logger';
+import type { I{{Name}}Client } from "./client.interface";
+import { TTLCache } from "../../lib/ttl-cache";
+import { logger } from "../../lib/logger";
 
 const TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 const CACHE_KEYS = {
   // TODO: Add cache keys for the methods you want to cache
   // Example:
-  data: (id?: string) => (id ? `data:${id}` : 'data'),
+  data: (id?: string) => (id ? `data:${id}` : "data"),
 } as const;
 
 /**
@@ -32,10 +32,10 @@ export class Cached{{Name}}Client implements I{{Name}}Client {
     const key = CACHE_KEYS.data(id);
     const cached = this.cache.get(key);
     if (cached !== undefined) {
-      logger.debug('Cache hit', { key });
+      logger.debug("Cache hit", { key });
       return cached;
     }
-    logger.debug('Cache miss', { key });
+    logger.debug("Cache miss", { key });
     const result = await this.client.getData(id);
     this.cache.set(key, result);
     return result;

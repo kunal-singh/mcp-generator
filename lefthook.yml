@@ -2,7 +2,7 @@ pre-commit:
   parallel: false
   commands:
     lint-staged:
-      run: pnpm exec lint-staged
+      run: pnpm exec lint-staged --config lint-staged.config.js
 
 commit-msg:
   commands:

@@ -1,1 +1,1 @@
-export { getExampleHandler } from './example.handler.js';
+export { getExampleHandler } from "./example.handler.js";
