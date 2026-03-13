@@ -1,5 +1,5 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
 
 export interface ScaffoldOptions {
   /** The raw project name as entered (e.g. "my-github" or "GitHub") */
@@ -18,7 +18,7 @@ export interface ScaffoldOptions {
  */
 export function toPascalCase(str: string): string {
   return str
-    .replace(/[-_\s]+(.)?/g, (_, c: string) => (c ? c.toUpperCase() : ''))
+    .replace(/[-_\s]+(.)?/g, (_, c: string) => (c ? c.toUpperCase() : ""))
     .replace(/^(.)/, (c) => c.toUpperCase());
 }
 
@@ -28,31 +28,26 @@ export function toPascalCase(str: string): string {
  */
 export function toKebabCase(str: string): string {
   return str
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
     .toLowerCase()
-    .replace(/\s+/g, '-');
+    .replace(/\s+/g, "-");
 }
 
 /**
  * Replace all template placeholders in a string.
  */
-function replacePlaceholders(
-  content: string,
-  name: string,
-  Name: string,
-  NAME: string,
-): string {
+function replacePlaceholders(content: string, name: string, Name: string, NAME: string): string {
   return content
-    .replaceAll('{{name}}', name)
-    .replaceAll('{{Name}}', Name)
-    .replaceAll('{{NAME}}', NAME);
+    .replaceAll("{{name}}", name)
+    .replaceAll("{{Name}}", Name)
+    .replaceAll("{{NAME}}", NAME);
 }
 
 /**
  * Files/directories to skip when copying the template.
  * These are the scaffolder's own build artifacts.
  */
-const SKIP_PATTERNS = new Set(['node_modules', 'dist', 'pnpm-lock.yaml']);
+const SKIP_PATTERNS = new Set(["node_modules", "dist", "pnpm-lock.yaml"]);
 
 /**
  * Recursively copy template directory to outputDir,
@@ -66,13 +61,7 @@ export function scaffold(options: ScaffoldOptions): void {
   copyDir(templateDir, outputDir, name, Name, NAME);
 }
 
-function copyDir(
-  src: string,
-  dest: string,
-  name: string,
-  Name: string,
-  NAME: string,
-): void {
+function copyDir(src: string, dest: string, name: string, Name: string, NAME: string): void {
   fs.mkdirSync(dest, { recursive: true });
 
   const entries = fs.readdirSync(src, { withFileTypes: true });
@@ -87,9 +76,9 @@ function copyDir(
     if (entry.isDirectory()) {
       copyDir(srcPath, destPath, name, Name, NAME);
     } else {
-      const content = fs.readFileSync(srcPath, 'utf-8');
+      const content = fs.readFileSync(srcPath, "utf-8");
       const transformed = replacePlaceholders(content, name, Name, NAME);
-      fs.writeFileSync(destPath, transformed, 'utf-8');
+      fs.writeFileSync(destPath, transformed, "utf-8");
     }
   }
 }
